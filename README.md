@@ -1,5 +1,3 @@
-Perfeito! Vou atualizar a seção de autores mantendo todo o resto do README igual. Aqui está a versão corrigida:
-
 # 🏙️ SMARTHUB CITY - Plataforma de Cidade Inteligente
 
 ## 📋 Descrição do Projeto
