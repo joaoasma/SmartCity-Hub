@@ -1,0 +1,98 @@
+---
+
+# 🌬️ SmartCity Hub — Monitoramento da Qualidade do Ar (AQI)
+
+## 🧩 Descrição
+
+O **SmartCity Hub** é um sistema voltado para o **monitoramento em tempo real da qualidade do ar (AQI)** em ambientes urbanos.
+O programa gerencia sensores distribuídos pela cidade que captam a **variação dos índices de poluição** e calculam uma **média geral do AQI**.
+
+O código lê o **número total de sensores** de um arquivo `.txt` e grava a **média do índice de qualidade do ar** em outro arquivo `.txt`, simulando o funcionamento de um banco de dados ambiental.
+O protótipo foi projetado para **simulações configuráveis a qualquer hora do dia**, permitindo testar diferentes condições ambientais.
+
+---
+
+## ⚙️ Funcionalidades
+
+* Leitura de dados a partir de arquivo de entrada (`BD_AQI.txt`)
+* Cálculo da média de qualidade do ar (AQI)
+* Escrita dos resultados em arquivo de saída
+* Simulação de horários e condições atmosféricas diversas
+
+---
+
+## 🧠 Estrutura do Código
+
+```
+📂 sensores_AQI/
+├── 📁 outputs/                 
+│   ├── BD_AQI.txt             → contém o número total de sensores
+│   └── qualidade_do_ar.txt    → registra a média do índice de qualidade do ar
+│
+└── qualidade_do_ar.cpp        → código principal do sistema
+```
+
+---
+
+## 💻 Compilação e Execução
+
+Para compilar o projeto:
+
+```bash
+g++ qualidade_do_ar.cpp -o smartcity_aqi
+```
+.
+Para executar:
+
+```bash
+./smartcity_aqi
+```
+
+---
+
+## 💡 Exemplo de Uso
+
+Durante a execução, o programa solicita o horário da simulação:
+
+```
+Digite o horário da simulação:
+hh mm
+```
+
+### Exemplo de Saída no Arquivo `qualidade_do_ar.txt`:
+
+```
+57.48
+```
+
+> O valor representa a **média do índice de qualidade do ar (AQI)** calculada pelos sensores no horário especificado.
+
+---
+
+## 📄 Formato dos Arquivos
+
+**Entrada:**
+`BD_AQI.txt` — contém o número de sensores e seus respectivos dados de simulação
+
+**Saída:**
+`qualidade_do_ar.txt` — armazena a média de qualidade do ar em AQI
+
+> Linhas iniciadas com `//` são consideradas comentários e ignoradas pelo programa.
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+* **C++ 17**
+* **Bibliotecas:**
+
+  * `<fstream>` – leitura e escrita de arquivos
+  * `<iostream>` – entrada e saída de dados
+  * `<unistd.h>` – simulação de passagem de tempo (`sleep`)
+  * `<cmath>` – cálculos matemáticos auxiliares
+  * `<ctime>` – geração de valores aleatórios para simulação
+* **VS Code** – ambiente de desenvolvimento
+* **GitHub** – controle de versão e documentação
+
+---
+

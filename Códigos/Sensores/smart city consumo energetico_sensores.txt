@@ -1,0 +1,102 @@
+---
+
+# 🏙️ SmartCity Hub
+
+## 🧩 Descrição
+
+O **SmartCity Hub** é um sistema de **monitoramento em tempo real de sensores energéticos** instalados em **postes inteligentes**.
+Esses postes são **desligados automaticamente** quando não há movimento detectado e **reativados** quando há presença, otimizando o consumo energético urbano.
+
+O programa lê o **número total de postes** de um arquivo `.txt` e registra o **consumo em kWh** em outro arquivo `.txt`, simulando um banco de dados para análise posterior.
+O protótipo foi projetado para **simulações em qualquer horário do dia**, com parâmetros totalmente configuráveis.
+
+---
+
+## ⚙️ Funcionalidades
+
+* Leitura de dados a partir de arquivo de entrada
+* Escrita automática do consumo energético em arquivo de saída
+* Desativação de postes sem detecção de movimento
+* Ativação de postes ao detectar movimento
+* Simulação de horários personalizados
+
+---
+
+## 🧠 Estrutura do Código
+
+```
+📂 sensores_energeticos/
+├── 📁 outputs/             
+│   ├── BD_postes.txt       → contém o número de postes
+│   └── consumo.txt          → registra o consumo energético (kWh)
+│
+└── energia.cpp              → código principal do sistema
+```
+
+---
+
+## 💻 Compilação e Execução
+
+Para compilar o projeto:
+
+```bash
+g++ energia.cpp -o smartcity
+```
+
+Para executar:
+
+```bash
+./smartcity
+```
+
+---
+
+## 💡 Exemplo de Uso
+
+Durante a execução, o programa solicita o horário da simulação:
+
+```
+Digite o horário da simulação:
+hh mm
+```
+
+### Exemplo de Saída no Terminal:
+
+```
+Iluminação de transporte 17 foi desativada por inatividade
+```
+
+### Exemplo de Saída no Arquivo `consumo.txt`:
+
+```
+160 190
+```
+
+---
+
+## 📄 Formato dos Arquivos
+
+**Entrada:**
+`BD_postes.txt` — contém o número total de postes da simulação
+
+**Saída:**
+`consumo.txt` — armazena os valores de consumo energético em kWh
+
+> Linhas iniciadas com `//` são consideradas comentários e ignoradas pelo programa.
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+* **C++ 17**
+* **Bibliotecas:**
+
+  * `<fstream>` – leitura e escrita de arquivos
+  * `<iostream>` – entrada e saída de dados
+  * `<unistd.h>` – simulação de passagem de tempo (`sleep`)
+  * `<cmath>` – operações matemáticas auxiliares
+  * `<ctime>` – geração de valores aleatórios para simulação
+* **VS Code** – ambiente de desenvolvimento
+* **GitHub** – controle de versão e colaboração
+
+---

@@ -1,0 +1,97 @@
+---
+
+# 🔊 SmartCity Hub — Monitoramento de Ruído Sonoro
+
+## 🧩 Descrição
+
+O **SmartCity Hub** é um sistema de **monitoramento em tempo real de sensores sonoros** distribuídos pela cidade.
+Esses sensores captam a **variação do nível de ruído urbano**, processando os dados e fornecendo uma **média geral de intensidade sonora**.
+
+O código lê o **número total de sensores** de um arquivo `.txt` e envia a **média de ruído** para outro arquivo `.txt`, que simula um **banco de dados** para análises posteriores.
+O protótipo foi desenvolvido para **simulações configuráveis** em qualquer horário do dia.
+
+---
+
+## ⚙️ Funcionalidades
+
+* Leitura de dados de sensores a partir de arquivo de entrada
+* Cálculo da média do nível de ruído captado
+* Escrita automática dos resultados em um arquivo de saída
+* Simulação de diferentes horários e intensidades sonoras
+
+---
+
+## 🧠 Estrutura do Código
+
+```
+📂 sensores_sonoros/
+├── 📁 outputs/                          
+│   ├── BD_sons.txt                  → contém o número total de sensores
+│   └── nivel_de_ruido_sonoros.txt   → armazena a média de ruído (em dB)
+│
+└── ruido.cpp                        → código principal do sistema
+```
+
+---
+
+## 💻 Compilação e Execução
+
+Para compilar o projeto:
+
+```bash
+g++ ruido.cpp -o smartcity_ruido
+```
+
+Para executar:
+
+```bash
+./smartcity_ruido
+```
+
+---
+
+## 💡 Exemplo de Uso
+
+Durante a execução, o programa solicita o horário da simulação:
+
+```
+Digite o horário da simulação:
+hh mm
+```
+
+### Exemplo de Saída no Arquivo `nivel_de_ruido_sonoros.txt`:
+
+```
+65.07
+```
+
+> Esse valor representa a **média de ruído sonoro (em decibéis)** detectada pelos sensores durante o horário especificado.
+
+---
+
+## 📄 Formato dos Arquivos
+
+**Entrada:**
+`BD_sons.txt` — contém o número total de sensores e suas configurações
+
+**Saída:**
+`nivel_de_ruido_sonoros.txt` — registra a média de ruído captada
+
+> Linhas iniciadas com `//` são consideradas comentários e ignoradas pelo programa.
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+* **C++ 17**
+* **Bibliotecas:**
+
+  * `<fstream>` – leitura e escrita de arquivos
+  * `<iostream>` – entrada e saída de dados
+  * `<unistd.h>` – simulação de passagem de tempo (`sleep`)
+  * `<cmath>` – cálculos matemáticos
+  * `<ctime>` – geração de valores aleatórios para simulação
+* **VS Code** – ambiente de desenvolvimento
+* **GitHub** – controle de versão e documentação
+
+---
